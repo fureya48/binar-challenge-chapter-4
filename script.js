@@ -48,6 +48,13 @@ class Start {
     this.compOption = option;
   }
 
+  compRandom() {
+    const option = [rockComp, paperComp, scissorComp];
+    const bot = option[Math.floor(Math.random() * option.length)];
+    bot.classList.add("pick");
+    return bot;
+  }
+
   winRules() {
     if (this.compOption == paperComp && this.playerOption == scissorPlayer) {
       this.winner = this.playerName;
@@ -65,13 +72,6 @@ class Start {
       this.winner = "DRAW";
     }
     return this.winner;
-  }
-
-  compRandom() {
-    const option = [rockComp, paperComp, scissorComp];
-    const bot = option[Math.floor(Math.random() * option.length)];
-    bot.classList.add("pick");
-    return bot;
   }
 
   matchResult() {

@@ -6,7 +6,7 @@ body {
   display: flex;
   align-items: center;
   margin: 15px;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 }
 
 .logo {
@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 25px;
 }
 
 button {
@@ -79,7 +79,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 25px;
 }
 
 .winner {

@@ -1,6 +1,6 @@
-const rockPlayer = document.querySelector("#rock-player");
-const paperPlayer = document.querySelector("#paper-player");
-const scissorPlayer = document.querySelector("#scissor-player");
+const rockPlayer = document.getElementById("rock-player");
+const paperPlayer = document.getElementById("paper-player");
+const scissorPlayer = document.getElementById("scissor-player");
 
 const rockComp = document.querySelector("#rock-comp");
 const paperComp = document.querySelector("#paper-comp");
@@ -12,14 +12,21 @@ const resetButton = document.querySelector("#reset");
 
 rockPlayer.addEventListener("click", () => {
   rockPlayer.classList.add("pick");
+  paperPlayer.setAttribute("disabled", true);
+  scissorPlayer.setAttribute("disabled", true);
   return pickOption(rockPlayer);
 });
 paperPlayer.addEventListener("click", () => {
   paperPlayer.classList.add("pick");
+  rockPlayer.setAttribute("disabled", true);
+  scissorPlayer.setAttribute("disabled", true);
   return pickOption(paperPlayer);
 });
+
 scissorPlayer.addEventListener("click", () => {
   scissorPlayer.classList.add("pick");
+  rockPlayer.setAttribute("disabled", true);
+  paperPlayer.setAttribute("disabled", true);
   return pickOption(scissorPlayer);
 });
 
@@ -97,5 +104,16 @@ function pickOption(params) {
 }
 
 resetButton.addEventListener("click", () => {
-  window.location.reload();
+  rockPlayer.classList.remove("pick");
+  paperPlayer.classList.remove("pick");
+  scissorPlayer.classList.remove("pick");
+  rockPlayer.removeAttribute("disabled");
+  paperPlayer.removeAttribute("disabled");
+  scissorPlayer.removeAttribute("disabled");
+  rockComp.classList.remove("pick");
+  paperComp.classList.remove("pick");
+  scissorComp.classList.remove("pick");
+  versus.classList.remove("winner");
+  versus.classList.add("versus");
+  versus.innerText = "VS";
 });
